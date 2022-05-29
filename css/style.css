@@ -1,0 +1,717 @@
+/*global values*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+
+:root {
+  --main-clr: rgb(110, 70, 220);
+  --clr-gray: #777;
+  --clr-light-gray: #999;
+  --clr-bg-dark: #111;
+  --clr-text-light: #fff;
+  --clr-bg-light: #fffffe;
+  --clr-text-dark: #000;
+}
+
+body {
+  font-size: 16px;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-dark);
+}
+
+.dark {
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-text-light);
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.special-heading {
+  color: var(--clr-gray);
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+.special-heading+p {
+  margin: -0.7em 0 0;
+  font-size: 1.2em;
+  text-align: center;
+  color: var(--clr-light-gray);
+}
+
+section {
+  padding-top: 6rem;
+}
+
+.section-header {
+  padding: 0 3rem 3rem;
+}
+
+i {
+  color: var(--main-clr);
+}
+
+a>i,
+button>i {
+  color: white;
+}
+
+h3+p {
+  color: var(--clr-gray);
+}
+
+.hero a,
+.about a,
+.project-card a,
+.email button {
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border-radius: 0.5em;
+  background-color: var(--main-clr);
+  padding: 1.5em;
+  margin-top: 2em;
+}
+
+
+/*end global values*/
+
+
+/*start header*/
+
+header {
+  font-size: 1.2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-shadow: 0 0 0.5em var(--clr-gray);
+  z-index: 99;
+  background-color: inherit;
+}
+
+
+/*skip nap button for easier accessibility*/
+
+#skip-nav-btn {
+  position: absolute;
+  left: 30%;
+  padding: 0.5em 1em;
+  background-color: #666;
+  border-radius: 0 0 5px 5px;
+  transition: transform 200ms;
+  transform: translateY(-150%);
+}
+
+#skip-nav-btn:focus {
+  transform: translateY(0);
+}
+
+header .container {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+header .nav ul{
+  list-style: none;
+  display: inline-block;
+}
+
+header .nav li{
+  display: inline-block;
+  padding-inline: 0.2em;
+}
+header .nav a{
+  text-decoration: none;
+  color: inherit;
+}
+header .nav p{
+  font-size: 0.8em;
+}
+header .nav a:active{
+  color: var(--main-clr);
+}
+
+header .nav i {
+  font-size: 1em;
+  color: var(--main-clr);
+  border: 0.2em solid var(--main-clr);
+  border: none;
+  padding: 0.2em;
+}
+
+header i+i {
+  padding-left: 0.5em;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+}
+.nav>*{
+  padding-inline: 0.2em;
+}
+/*custom nav icon*/
+.nav-icon {
+  padding-block: 0.2em;
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.nav-icon span {
+  background-color: var(--main-clr);
+  margin-bottom: 5px;
+  height: 3px;
+}
+.nav-icon span:first-child {
+  width: 100%;
+  transition: 0.3s;
+}
+.nav-icon span:nth-child(2) {
+  width: 70%;
+}
+.nav-icon span:last-child {
+  width: 100%;
+  transition: 0.3s;
+}
+/*start nav button animation*/
+.nav-icon:hover span:first-child {
+  transform: rotate(-135deg);
+  position: relative;
+  top: 8px;
+}
+.nav-icon:hover span:nth-child(2) {
+  visibility: hidden;
+}
+.nav-icon:hover span:last-child {
+  transform: rotate(135deg);
+  position: relative;
+  bottom: 8px;
+}
+/*end nav button animation*/
+
+.nav-icon:hover ~ ul{
+  display: block;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  width: 90%;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #555;
+  /*TODO*/
+  color: inherit;
+}
+
+@media screen and (min-width:600px){
+  header .nav ul i, .nav-icon{
+    display: none;
+  }
+}
+@media screen and (max-width:599px){
+  header .nav ul{
+    display: none;
+  }
+}
+
+/*end header*/
+
+
+/*start main*/
+
+
+/*start hero section*/
+
+.hero .container {
+  display: grid;
+  position: relative;
+}
+
+@media screen and (min-width: 600px) {
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero .text {
+    grid-area: 2/1;
+  }
+  .hero .socials {
+    right: 0;
+  }
+  .hero .my-image {
+    grid-area: 2/2;
+    margin-right: 3em;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .hero .socials {
+    left: 0;
+  }
+}
+
+.hero .my-image,
+.about .my-image {
+  display: block;
+  text-align: center;
+}
+
+.hero .my-image img {
+  width: 16em;
+  border-radius: 100% 100% 100% 20%;
+}
+
+.hero .socials {
+  position: absolute;
+  top: 2em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.hero .socials i {
+  display: block;
+  padding: 1em;
+  color: var(--main-clr);
+}
+
+.hero .text {
+  padding: 1.5em;
+}
+
+.hero h2 {
+  padding-bottom: 0.3em;
+}
+
+.hero h3 {
+  padding-bottom: 1em;
+}
+
+.hero h3 {
+  color: var(--clr-gray);
+}
+
+
+/*end hero section*/
+
+
+/*start about section*/
+
+.about .container {
+  display: grid;
+}
+
+.about .my-image {
+  margin: 0 auto;
+  width: 16em;
+  aspect-ratio: 4/3;
+  border-radius: 1em;
+  background-image: url("/images/me3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about .text {
+  text-align: center;
+  margin: 1em;
+  color: var(--clr-gray);
+}
+
+@media screen and (min-width: 600px) {
+  .about .my-image {
+    grid-area: 2/1;
+    aspect-ratio: 3/4;
+  }
+  .about .text {
+    grid-area: 2/2;
+    padding-inline: 2em;
+  }
+}
+
+.about .achievements {
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about .achievement h3 {
+  font-weight: 700;
+}
+
+.about a {
+  text-align: center;
+}
+
+
+/*end about section*/
+
+
+/*start skills section*/
+
+.skills input[type="radio"] {
+  display: none;
+}
+
+.skills label {
+  display: block;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-image: linear-gradient(#0003, #fff3);
+  padding: 0.5em;
+  border: 1px solid darkgrey;
+  border-radius: 0.25em;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-content {
+  border: 1px solid gray;
+  line-height: 20px;
+  border-radius: 0 0 0.25em 0.25em;
+  z-index: -1;
+  opacity: 0;
+  padding: 0;
+  padding-left: 1em;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s linear;
+}
+
+label>i:last-child {
+  transition: 0.3s;
+}
+
+input:checked~label>i:last-child {
+  transform: rotate(90deg);
+}
+
+input:checked~label {
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+input:checked~.accordion-content {
+  padding: 1em;
+  opacity: 1;
+  z-index: 1;
+  max-height: 500px;
+}
+
+.accordion {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+/* accordion heading */
+
+.accordion label:hover {
+  cursor: pointer;
+}
+
+
+/* accordion section content */
+
+@media screen and (max-width:480px) {
+  .accordion {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.skills ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.skills li+li {
+  padding-top: 1em;
+}
+
+.skills .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion progress {
+  display: block;
+  border-radius: 1em;
+  width: 100%;
+  background-color: black;
+  color: red;
+}
+
+
+/*end skills section*/
+
+
+/*start services section*/
+
+.services .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em;
+  gap: 2em;
+}
+
+.service-card {
+  width: 100%;
+  height: 15rem;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.4em var(--clr-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media screen and (min-width:600px) {
+  .services .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card a {
+  color: var(--main-clr);
+}
+
+
+/*end services section*/
+
+
+/*start portfolio section*/
+
+/* Hide the images by default */
+
+.mySlides {
+  display: none;
+}
+.prev,
+.next{
+  padding: 1em 0.5em;
+  border-radius: 0.5em;
+  background-color: rgba(110, 70, 220, 0.2);
+  position: absolute;
+  top: 50%;
+}
+.prev{
+  left: 2%;
+}
+.next{
+  right:2%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dots{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: var(--main-clr);
+}
+
+
+/* Fading animation */
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+/*the project card sliders*/
+.project-card {
+  margin: 10%;
+  width: 80%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.4em var(--clr-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  white-space: wrap;
+}
+
+.project-card .project-image {
+  width: 100%;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 0.4em;
+}
+
+.project-text {
+  padding: 1em;
+}
+
+.project-text p {
+  padding: 0.2em;
+  word-wrap: break-word;
+}
+
+.project-text h3 {
+  margin-bottom: 1em;
+}
+
+/*end portfolio section*/
+
+
+/*start contact section*/
+
+.contact .container {
+  display: grid;
+  gap: 2em;
+  padding: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  .contact .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact input,
+.contact textarea {
+  display: block;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.contact button>* {
+  padding-inline: 1em;
+}
+
+.contact-methods a,
+.email>input,
+.email>textarea {
+  border: none;
+  margin-block: 1em;
+  padding: 0.5em 0.5em;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: inherit;
+  color: inherit;
+}
+
+.email>input,
+.email>textarea {
+  box-shadow: inset 0 -0.3em 1em 0.1em var(--clr-gray);
+}
+
+.contact-methods>a {
+  box-shadow: 0 0 0.4em var(--clr-gray);
+}
+
+.email>textarea {
+  margin-bottom: 0.5em;
+}
+
+.email>button {
+  margin-top: 0;
+}
+
+.contact-methods a i {
+  text-align: center;
+  padding-inline: 0.3em;
+}
+
+
+/*end contact section*/
+
+
+/*end main*/
+
+
+/*start footer*/
+
+footer {
+  background-color: var(--main-clr);
+  color: white;
+  padding: 2em 1.5em;
+}
+
+footer .container {
+  display: grid;
+  gap: 1.3em;
+  margin-bottom: 2em;
+}
+
+@media screen and (min-width: 600px) {
+  footer .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+footer .socials {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+footer .socials i {
+  color: inherit;
+}
+
+footer p {
+  text-align: center;
+}
+
+
+/*end footer*/
