@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://kit.fontawesome.com/11b49ba885.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <a href="#main" id="skip-nav-btn">skip navigation</a>
+    <div class="container">
+      <div class="title">
+        <h3>Mohammad</h3>
+      </div>
+      <div class="nav">
+        <div class="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul>
+          <li><a href="#main"><i class="fa-solid fa-house-chimney"></i><p>Home</p></a></li>
+          <li><a href="#about"><i class="fa-solid fa-user"></i><p>About</p></a></li>
+          <li><a href="#skills"><i class="fa-solid fa-clipboard-list"></i><p>Skills</p></a></li>
+          <li><a href="#services"><i class="fa-solid fa-briefcase"></i><p>Services</p></a></li>
+          <li><a href="#portfolio"><i class="fa-solid fa-laptop-code"></i><p>Portfolio</p></a></li>
+          <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i><p>Contact me</p></a></li>
+        </ul>
+        <div>
+          <i id="night-mode" onclick="toggleNight()" class="fa-solid fa-moon"></i>
+        </div>
+        <!--<i class="fa-solid fa-grip"></i>-->
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <!--start hero section-->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="socials">
+          <i class="fab fa-facebook fa-xl"></i>
+          <i class="fab fa-instagram fa-xl"></i>
+          <i class="fab fa-github fa-xl"></i>
+        </div>
+        <div class="my-image">
+          <img src="images/me1.jpg" alt="mohammad" />
+        </div>
+        <div class="text">
+          <h2>Hi, I'm Mohammad</h2>
+          <h3>Frontend developer</h3>
+          <p>
+            A self taught frontend web developer with <span>+1 year</span> of experience designing modern and high quality projects.
+          </p>
+          <a href="#contact">Contact me &nbsp;<i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </section>
+    <!--end hero section-->
+
+    <!--start about section-->
+    <section class="about" id="about">
+      <div class="section-header">
+        <h3 class="special-heading">About me</h3>
+        <p>
+          My introduction
+        </p>
+      </div>
+      <div class="container">
+        <div class="my-image">
+          <!--<img src="images/me2.jpg" alt="mohammad" />-->
+        </div>
+        <div class="text">
+          <p>
+            Web developer with extensive knowledge and years of experience working in web technologies and UI/UX design, delivering quality work.
+          </p>
+          <div class="achievements">
+            <div class="achievement">
+              <h3>1+</h3>
+              <p>
+                years experience
+              </p>
+            </div>
+            <div class="achievement">
+              <h3>4+</h3>
+              <p>
+                projects completed
+              </p>
+            </div>
+            <div class="achievement">
+              <h3>1+</h3>
+              <p>
+                companies worked
+              </p>
+            </div>
+          </div>
+          <a href="#contact">Download CV &nbsp;<i class="fa-solid fa-download"></i></a>
+        </div>
+      </div>
+    </section>
+    <!--end about section-->
+
+    <!--start skills section-->
+    <section class="skills" id="skills">
+      <div class="section-header">
+        <h3 class="special-heading">Skills</h3>
+        <p>
+          My technical level
+        </p>
+      </div>
+      <div class="container">
+        <!-- accordion (start) -->
+        <div class="accordion">
+          <!-- accordion section 1 -->
+          <input type="radio" name="accordion" id="accordion1" />
+          <label for="accordion1"><i class="fa-solid fa-code"></i>Frontend developer <i class="fa-solid fa-circle-right"></i></label>
+          <div id="accordioncontent_1" class="accordion-content">
+            <ul>
+              <li>
+                <div class="details">
+                  <h4>HTML</h4>
+                  <p>
+                    99%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="99" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>CSS</h4>
+                  <p>
+                    90%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="90" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>Javascript</h4>
+                  <p>
+                    80%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="80" max="100"></progress>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion">
+
+          <input type="radio" name="accordion" id="accordion2" />
+          <label for="accordion2"><i class="fa-solid fa-wand-magic-sparkles"></i>Frontend developer <i class="fa-solid fa-circle-right"></i></label>
+          <div id="accordioncontent_2" class="accordion-content">
+            <ul>
+              <li>
+                <div class="details">
+                  <h4>HTML</h4>
+                  <p>
+                    99%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="99" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>CSS</h4>
+                  <p>
+                    90%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="90" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>Javascript</h4>
+                  <p>
+                    80%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="80" max="100"></progress>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="radio" name="accordion" id="accordion3" />
+          <label for="accordion3"><i class="fa-solid fa-pencil"></i>Frontend developer <i class="fa-solid fa-circle-right"></i></label>
+          <div id="accordioncontent_3" class="accordion-content">
+            <ul>
+              <li>
+                <div class="details">
+                  <h4>HTML</h4>
+                  <p>
+                    99%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="99" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>CSS</h4>
+                  <p>
+                    90%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="90" max="100"></progress>
+                </div>
+              </li>
+              <li>
+                <div class="details">
+                  <h4>Javascript</h4>
+                  <p>
+                    80%
+                  </p>
+                </div>
+                <div class="progress">
+                  <progress value="80" max="100"></progress>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!--<h1 id="accordionhead_1"><i class="fa-solid fa-code"></i>Frontend developer <i class="fa-solid fa-circle-right"></i></h1>-->
+
+        <!-- accordion section 2 -->
+        <!--<h1 id="accordionhead_2"><i class="fa-solid fa-wand-magic-sparkles"></i>Frontend designer <i class="fa-solid fa-circle-right"></i></h1>-->
+
+        <!-- accordion section 3 -->
+        <!--<h1 id="accordionhead_3"><i class="fa-solid fa-pencil"></i>Branding designer <i class="fa-solid fa-circle-right"></i></h1>-->
+      </div>
+
+    </section>
+    <!--end skills section-->
+
+    <!--start services section-->
+    <section class="services" id="services">
+      <div class="section-header">
+        <h3 class="special-heading">Services</h3>
+        <p>
+          What I offer
+        </p>
+      </div>
+      <div class="container">
+        <div class="service-card">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <h3>UI/UX designer</h3>
+          <a>view more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Web developer</h3>
+          <a>view more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-pencil"></i>
+          <h3>Branding designer</h3>
+          <a>view more &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <!--end services section-->
+
+    <!--start portfolio section-->
+    <section class="portfolio" id="portfolio">
+      <div class="section-header">
+        <h3 class="special-heading">Portfolio</h3>
+        <p>
+          Most recent work
+        </p>
+      </div>
+      <div id="slider">
+        <!-- the slide cards -->
+        <div class="project-card mySlides fade" id="slide1">
+          <div class="project-image">
+            <img src="images/minesweeper1.jpg" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>Minesweeper clone</h3>
+            <p>
+              My approach to the infamous game Minesweeper
+            </p>
+            <a>Demo &rarr;</a>
+          </div>
+        </div>
+        <div class="project-card mySlides fade" id="slide2">
+          <div class="project-image">
+            <img src="images/minesweeper2.jpg" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>Minesweeper clone</h3>
+            <p>
+              My approach to the infamous game Minesweeper
+            </p>
+            <a>Demo &rarr;</a>
+          </div>
+        </div>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- The dots/circles -->
+        <div class="dots" style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </section>
+    <!--end portfolio on-->
+
+    <!--start contact section-->
+    <section class="contact" id="contact">
+      <div class="section-header">
+        <h3 class="special-heading">Contact me</h3>
+        <p>
+          get in touch
+        </p>
+      </div>
+      <div class="container">
+        <div class="contact-methods">
+          <h2>Choose a method</h2>
+          <a class="number">
+            <div class="icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-info">
+              <h3>Call me</h3>
+              <p>
+                111 222 333
+              </p>
+            </div>
+          </a>
+          <a class="email-address">
+            <div class="icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-info">
+              <h3>Email</h3>
+              <p>
+                m7md.master1@gmail.com
+              </p>
+            </div>
+          </a>
+          <a class="location">
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-info">
+              <h3>Location</h3>
+              <p>
+                Syria, Latakia
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="email-form">
+          <h2>Or quickly send an E-mail</h2>
+          <form class="email" action="" method="" accept-charset="utf-8">
+            <input type="text" id="sender" placeholder="Your E-mail adress..." />
+            <input type="text" id="subject" placeholder="Subject..." />
+            <textarea type="textarea" id="message" rows="7" placeholder="Message..."></textarea>
+            <button type="submit">Send &nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--end contact section-->
+  </main>
+  <!--start footer-->
+  <footer id="footer">
+    <div class="container">
+      <div>
+        <h2>Mohammad</h2>
+        <h3>Frontend developer</h3>
+      </div>
+      <div class="socials">
+        <i class="fab fa-facebook fa-xl"></i>
+        <i class="fab fa-instagram fa-xl"></i>
+        <i class="fab fa-github fa-xl"></i>
+      </div>
+    </div>
+    <p>
+      &copy; Mohammad, all rights reserved.
+    </p>
+  </footer>
+  <!--end footer-->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
