@@ -172,11 +172,12 @@ header i+i {
 }
 /*custom nav icon*/
 .nav-icon {
+  background-color: inherit;
   padding-block: 0.2em;
   width: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 .nav-icon span {
   background-color: var(--main-clr);
@@ -189,8 +190,9 @@ header i+i {
 }
 .nav-icon span:nth-child(2) {
   width: 70%;
+  transition: 0.3s;
 }
-.nav-icon span:last-child {
+.nav-icon span:nth-child(3) {
   width: 100%;
   transition: 0.3s;
 }
@@ -201,30 +203,52 @@ header i+i {
   top: 8px;
 }
 .nav-icon:hover span:nth-child(2) {
-  visibility: hidden;
+  opacity: 0;
 }
-.nav-icon:hover span:last-child {
+.nav-icon:hover span:nth-child(3) {
   transform: rotate(135deg);
   position: relative;
   bottom: 8px;
 }
 /*end nav button animation*/
 
-.nav-icon:hover ~ ul{
-  display: block;
+.nav-icon ul{
+  display: none;
+  text-align: center;
   position: absolute;
-  top: 6rem;
+  top: 4.2rem;
   right: 0;
-  width: 90%;
+  width: 30%;
   padding: 1em;
-  border-radius: 1em;
-  background-color: #555;
-  /*TODO*/
-  color: inherit;
+  border-radius: 0.6em;
+  background-color: #777d;
+  background-image: linear-gradient(#333d, #777d);
+  color: white;
+}
+.nav-icon ul::before{
+  content: "";
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent #444;
+  position: absolute;
+  right: 1em;
+  top: -1.755rem;
+  content: "";
+  
+}
+.nav-icon li{
+  display: inline-block;
+  width: 99%;
+}
+.nav-icon li+li{
+  border-top: 1px solid #ddd;
+}
+.nav-icon:hover > ul{
+  display: block;
 }
 
 @media screen and (min-width:600px){
-  header .nav ul i, .nav-icon{
+  .nav-icon{
     display: none;
   }
 }
@@ -460,11 +484,8 @@ input:checked~.accordion-content {
 }
 
 .accordion progress {
-  display: block;
-  border-radius: 1em;
   width: 100%;
-  background-color: black;
-  color: red;
+  accent-color: var(--main-clr);
 }
 
 
@@ -508,6 +529,9 @@ input:checked~.accordion-content {
 /*start portfolio section*/
 
 /* Hide the images by default */
+.portfolio #slider{
+  position: relative;
+}
 
 .mySlides {
   display: none;
@@ -537,7 +561,7 @@ input:checked~.accordion-content {
 /* The dots/bullets/indicators */
 .dots{
   position: absolute;
-  bottom: 0;
+  bottom: -2em;
   left: 50%;
   transform: translate(-50%);
 }
