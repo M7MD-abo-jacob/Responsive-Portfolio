@@ -395,7 +395,7 @@ header i+i {
 
 /*start skills section*/
 
-.skills input[type="radio"] {
+.skills input[type="checkbox"] {
   display: none;
 }
 
